@@ -1,264 +1,328 @@
-/* Variables and colours */
+/* Variables and color settings */
 :root {
-  --color-main: #fdf2e9;
-  --color-secondary: #e67e22;
+	--color-one: #171717;
+	--color-two: rgb(176, 173, 173);
+	--color-three: #fafafa;
+	--color-four: #197c98;
+	--section-height: 90vh;
+  --section-width: 80vw;
 }
 
+/* General css oooooooooooooooooooooooo */
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
-.color-main-bg {
-  background-color: var(--color-main);
+.profile-image{
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	border-radius: 100px;
+
 }
 
-/* CSS reset */
+#home,
+#front-end-course,
+#resources,
+#contact {
+	scroll-margin-top: 4.7em;
+}
+
 body {
-  margin: 0;
-  font-family: "Rubik", sans-serif;
+	color: var(--color-four);
+	background-color: var(--color-three);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
-  font-size: 3em;
+	font-size: 2em;
+	margin: 0;
 }
 
-/* Links */
-
-a {
-  text-decoration: none;
+h2 {
+	font-size: 2em;
 }
 
-a:link {
-  color: rgb(20, 15, 15);
+h3 {
+	font-size: 1.5em;
 }
 
-a:visited {
-  color: rgb(24, 33, 24);
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+address {
+	padding: 20px;
+	margin: 20px;
 }
 
-a:hover {
-  color: var(--color-secondary);
-  transition-duration: 0.5s;
+/* Colors qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq*/
+
+.color-one-bg {
+	background-color: var(--color-one);
 }
 
-a:active {
-  color: blue;
+.color-one {
+	color: var(--color-one);
 }
 
-/* Buttons */
-
-.btn:link,
-.btn:visited {
-  position: relative;
-  background-color: #549ce6;
-  color: rgb(247, 237, 237);
-  padding: 1em 1em;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 800;
-  display: inline-block;
-  border-radius: 0.5em;
-  margin: 0.5em;
+.color-two-bg {
+	background-color: var(--color-two);
 }
 
-.btn:hover,
-.btn:active {
-  background-color: rgb(245, 212, 212);
+.color-two {
+	color: var(--color-two);
 }
 
-/* Re usable components */
-.list-reset {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.color-three-bg {
+	background-color: var(--color-three);
+}
+
+.color-three {
+	color: var(--color-three);
+}
+
+.color-four-bg {
+	background-color: var(--color-four);
+}
+
+.color-four {
+	color: var(--color-four);
+}
+.gradient-1 {
+	background: rgb(2, 0, 36);
+	background: linear-gradient(8deg, rgba(2, 0, 36, 1) 0%, rgba(175, 174, 172, 1) 50%, rgba(0, 212, 255, 1) 100%);
+}
+
+.gradient-2 {
+	background: rgb(2, 0, 36);
+	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(25, 124, 152, 1) 41%, rgba(0, 212, 255, 1) 100%);
+}
+
+
+/* Animation oooooooooooooooooooooooooooooooooooooo  */
+@keyframes scale-a-lil {
+	from {
+		scale: 0.5;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.animate {
+		animation: scale-a-lil linear both;
+		animation-timeline: view();
+		animation-range: 20vh 50vh;
+	}
+}
+
+
+/* Re useable calsses iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii */
+.section-height {
+	min-height: var(--section-height);
 }
 
 .img-responsive {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
-.highlight-text {
-  color: red;
-  font-weight: bold;
+.grid-main {
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, var(--section-width)) 1fr;
 }
 
-.bold-text {
-  font-weight: bold;
+.grid-content {
+	grid-column: 2/3;
 }
 
-.grid--bleed {
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, 80em) 1fr;
+.grid-2-col {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+	gap: 20px;
 }
 
-.grid-auto-fit {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-  gap: 20px;
+.grid-3-col {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+	gap: 20px;
 }
 
-.grid-no-bleed {
-  grid-column: 2/3;
+.flex-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.flex-middle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+button {
+	padding: 0.3em 2em 0.3em 2em;
+	margin: 20px;
+	font-size: 1.2em;
+	border: 0;
 }
 
-.margin-large-t-b {
-  margin: 10em 0;
+/* Main site stuff iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii */
+/* Links on top */
+.top-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid var(--color-one);
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
-/* Top navigation --------------------------------------------- */
-
-.logo {
-  height: 7em;
-  grid-row: 1;
+.nav-bar ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	
 }
 
-.contact {
-  grid-column: 2/3;
-  grid-row: 1;
-  justify-self: center;
+.nav-bar a {
+	display: block;
+	text-decoration: none;
+	padding: 1em;
+	font-weight: bold;
+	color: var(--color-three);
 }
 
-/* Main top banner ------------------------------------------ */
-.banner-cta {
-  background-color: #e67e22;
-  color: white;
+.nav-bar a:hover {
+	color: var(--color-two);
 }
 
-.banner-cta__content {
-  justify-content: center;
-  text-align: center;
+/* Main banner image section */
+.top-section {
+	position: relative;
 }
 
-.banner-main__top {
-  justify-content: space-between;
+.top-section::before {
+	content: "";
+	background-image: url("../img/banner.png");
+	opacity: 0.9;
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: -1;
 }
 
-.banner-main__top > * {
-  padding: 10px;
+.top-banner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+
 }
 
-.banner-main {
-  position: relative;
-  color: rgb(77, 71, 71);
+.top-banner *:not(button) {
+	margin: 20px;
+	padding: 0;
 }
 
-.banner-main::before {
-  content: "";
-  background-image: url("../img/banner.png");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  z-index: -1;
+/* About section */
+.about__right {
+	display: flex;
+	flex-direction: column;
 }
 
-.banner-main__bottom {
-  text-align: center;
-  padding-bottom: 50px;
+.about p {
+	padding-top: 0;
+	margin-top: 0;
 }
 
-.web-dev-img {
-  height: 300px;
+.about h3 {
+	padding-bottom: 0;
+	margin-bottom: o;
 }
 
-/*Benifits section ------------------------ */
-
-.benifits {
-  text-align: center;
+/* Install section */
+.text-on-image-div {
+	position: relative;
+	text-align: center;
 }
 
-.benifits ul li {
-  padding: 2em;
+.text-on-image-div::before {
+	content: "";
+	background-image: url("../img/install-left.png");
+	opacity: 0.5;
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
 }
 
-/* Reviews section ----------------------------------------------------- */
-
-.testemonials {
-  position: relative;
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.testemonials::before {
-  content: "";
-  background-image: url("../img/banner.png");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
-  z-index: -2;
+
+/* Web templates section */
+.thumbnail {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 20px;
 }
 
-/* Tutorials resources section ------------------------------- */
-.tutorials-resources {
-  background-color: #a5cdf5;
-}
-/* Web development secion --------------------------------------*/
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+.thumbnail h3 {
+	margin: 0;
 }
 
-/* About me section ---------------------------------------------------------- */
-.about-me {
-  position: relative;
-  text-align: center;
+.os {
+	border-top: 1px solid var(--color-four);
+	border-bottom: 1px solid var(--color-four);
 }
 
-.about-me::before {
-  content: "";
-  background-image: url("../img/banner.png");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.2;
-  z-index: -2;
+/* Other web dev servies section */
+.service-list-ul {
+	text-align: left;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	list-style-type: circle;
 }
 
-.about-me-image {
-  border-radius: 100px;
+.service-list-ul li {
+	border-bottom: 1px solid var(--color-three);
 }
 
-/* Footer section ------------------------------------------------------- */
-.footer-content {
-  align-items: center;
-  justify-content: space-between;
-}
-.footer-content > * {
-  padding: 5em;
-}
-.copyright {
-  background-color: #f8e0e0;
+/* Footer section */
+footer a {
+	color: var(--color-four);
 }
 
-@media screen and (min-width: 600px) {
-  .banner-cta__content,
-  .banner-main__top,
-  .go-to-course__content,
-  .footer-content {
-    flex-direction: row;
+@media screen and (max-width:600px) {
+  :root {
+   
+    
+    --section-width: 100vw;
   }
+	body {
+    text-align: center;
+		font-size: 16px;
+	}
 }
+
